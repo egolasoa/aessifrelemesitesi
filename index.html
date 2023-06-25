@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AES Şifreleme/Çözme</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>AES Şifreleme/Çözme</h1>
+  <div class="container">
+    <div class="section">
+      <h2>Şifrele</h2>
+      <div class="input-container">
+        <label for="plaintext">Metin:</label>
+        <input type="text" id="plaintext" placeholder="Metni girin..." />
+      </div>
+      <div class="input-container">
+        <label for="key">Anahtar:</label>
+        <input type="text" id="key" placeholder="Anahtar girin..." />
+      </div>
+      <div class="button-container">
+        <button onclick="encrypt()" id="myButton">Şifrele</button>
+      </div>
+      <div class="input-container">
+        <label for="ciphertext">Şifreli Metin:</label>
+        <input type="text" id="ciphertext" disabled />
+        <button class="copy-button" onclick="copyText('ciphertext')">
+          <i class="fas fa-copy"></i> Kopyala
+        </button>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Çöz</h2>
+      <div class="input-container">
+        <label for="deciphertext">Şifreli Metin:</label>
+        <input type="text" id="deciphertext" placeholder="Şifreli metni girin..." />
+      </div>
+      <div class="input-container">
+        <label for="decryption-key">Anahtar:</label>
+        <input type="text" id="decryption-key" placeholder="Anahtar girin..." />
+      </div>
+      <div class="button-container">
+        <button onclick="decrypt()" id="myButton">Çöz</button>
+      </div>
+      <div class="input-container">
+        <label for="plaintext">Çözülen Metin:</label>
+        <input type="text" id="deciphertext-result" disabled />
+        <button class="copy-button" onclick="copyText('deciphertext-result')">
+          <i class="fas fa-copy"></i> Kopyala
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
